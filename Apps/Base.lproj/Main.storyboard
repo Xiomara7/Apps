@@ -86,7 +86,7 @@
                                     <action selector="onCategoryButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zZq-JJ-jJg"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3rb-h4-RJW" customClass="CategoriesView" customModule="Apps" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3rb-h4-RJW" customClass="CategoriesView" customModule="Apps" customModuleProvider="target">
                                 <rect key="frame" x="272" y="20" width="323" height="114"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
