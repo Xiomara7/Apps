@@ -1,4 +1,4 @@
-# Apps
+# Top 20 apps on the App Store
 
 ### Video Walkthrough:
 
