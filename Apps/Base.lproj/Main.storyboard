@@ -89,9 +89,6 @@
                             <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3rb-h4-RJW" customClass="CategoriesView" customModule="Apps" customModuleProvider="target">
                                 <rect key="frame" x="272" y="20" width="323" height="114"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="323" id="Wjj-ka-VKW"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -102,6 +99,7 @@
                             <constraint firstAttribute="trailing" secondItem="01b-A1-jjv" secondAttribute="trailing" id="Jfd-vR-Jvg"/>
                             <constraint firstItem="01b-A1-jjv" firstAttribute="top" secondItem="5Cb-pt-hJM" secondAttribute="bottom" constant="8" id="ZLg-8k-AVp"/>
                             <constraint firstItem="3rb-h4-RJW" firstAttribute="leading" secondItem="5Cb-pt-hJM" secondAttribute="trailing" constant="88" id="ZYZ-60-3ES"/>
+                            <constraint firstItem="3rb-h4-RJW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ZpY-9v-pt7"/>
                             <constraint firstItem="01b-A1-jjv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hPJ-CF-rhS"/>
                             <constraint firstItem="5Cb-pt-hJM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mVi-xK-QFN"/>
                             <constraint firstItem="01b-A1-jjv" firstAttribute="top" secondItem="3rb-h4-RJW" secondAttribute="bottom" constant="8" id="r9c-Yl-eXs"/>
