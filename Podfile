@@ -8,6 +8,7 @@ target 'Apps' do
   pod 'SwiftyJSON'
   pod 'BDBOAuth1Manager'
   pod 'PureLayout'
+  pod 'SwiftyJSON'
   
 end
 

@@ -24,14 +24,15 @@ class AppsController: UIViewController {
         categoriesView.delegate = self
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-        APIClient.shared.getTopApps(success: { topApps in
-            self.apps = topApps
-            self.collectionView.reloadData()
+      
+        APIClient.shared.getTopApps { (topApps, error) in
+            if let _ = error {
+                // show alert
+            }
             
-        }, failure: { error in
-            print(error)
-        })
+            self.apps = topApps ?? AppArray()
+            self.collectionView.reloadData()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,9 +64,7 @@ extension AppsController: UICollectionViewDelegate, UICollectionViewDataSource {
         let app = filteredApps[indexPath.row]
         
         cell.nameLabel.text = app.name
-        if let imageURL = app.imageURL {
-            cell.appImageVIew.setImageWith(URL(string:imageURL)!)   
-        }
+        cell.appImageVIew.setImageWith(URL(string: app.imageURL)!)
         
         return cell
     }

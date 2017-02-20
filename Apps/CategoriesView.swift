@@ -9,10 +9,12 @@
 import UIKit
 import PureLayout
 
+// MARK: - Categories View Protocol
 protocol CategoriesViewProtocol {
     func didCategoryChanged(category: String)
 }
 
+// MARK: - Categories View
 class CategoriesView: UIView {
 
     var delegate: CategoriesViewProtocol?
@@ -22,7 +24,7 @@ class CategoriesView: UIView {
                       "Music",
                       "Entertainment",
                       "Photo & Video",
-                      "Social Netwroking",
+                      "Social Networking",
                       "Utilities",
                       "Navigation",
                       "Games",
@@ -31,8 +33,10 @@ class CategoriesView: UIView {
     
     override func updateConstraints() {
         if shouldUpdateConstraints {
+            // Create a button for each Category available
             for category in Categories {
                 let button = UIButton(frame: CGRect.zero)
+                
                 button.setBackgroundImage(UIImage(named: "circleFilled"), for: .normal)
                 button.setTitleColor(UIColor.white, for: .normal)
                 button.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -43,10 +47,11 @@ class CategoriesView: UIView {
                 self.addSubview(button)
             }
             
-            let subviews = CGFloat(self.subviews.count / 2)
             let screenSize = UIScreen.main.bounds
+            let subviews = CGFloat(self.subviews.count / 2)
             var currentX: CGFloat = 0.0
             
+            // Autolayout for each Category button
             for view in self.subviews {
                 view.autoSetDimension(.width, toSize: (screenSize.width) / subviews)
                 view.autoSetDimension(.height, toSize: (screenSize.width) / subviews)

@@ -8,7 +8,9 @@
 
 import Foundation
 import BDBOAuth1Manager
+import SwiftyJSON
 
+// MARK: - API Client
 class APIClient: BDBOAuth1SessionManager {
     
     struct URLHosts {
@@ -26,16 +28,29 @@ class APIClient: BDBOAuth1SessionManager {
     
     static let shared = APIClient()
 
-    func getTopApps(success:@escaping ([App]) -> (), failure:@escaping (Error) ->()) {
+    // MARK: - API Client Methods
+    func getTopApps(completion: ((AppArray?, Error?) -> ())?) {
+        
         get(Config.URLString, parameters: nil, progress: nil, success: {(_, response) in
-            let apps = App.cardsWithArray(dictionary: response as! [String:AnyObject])
-            success(apps)
+            let json = JSON(response!)
+            var apps: AppArray?
+            
+            if let entriesJSON = json["feed"]["entry"].array {
+                apps = AppArray()
+                
+                for entryJSON in entriesJSON  {
+                    if let app = App(json: entryJSON) {
+                        apps?.append(app)
+                    }
+                }
+                
+                completion?(apps, nil)
+            } else {
+                completion?(nil, NSError(domain: "error.domain", code: 0, userInfo: nil))
+            }
             
         }) {(_, error) in
-            
-            print("error: \(error)")
-            
-            failure(error)
+            completion?(nil, error)
         }
 
     }

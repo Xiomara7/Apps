@@ -28,7 +28,7 @@ class AppDetailsController: UIViewController {
             self.circle.transform = scaleTransform
             self.circle.frame.origin.y = 64.0
         
-            self.appImageView.setImageWith(URL(string: self.appShown.imageURL!)!)
+            self.appImageView.setImageWith(URL(string: self.appShown.imageURL)!)
             self.appImageView.center = self.circle.center
             
         }, completion: { (finished: Bool) in
