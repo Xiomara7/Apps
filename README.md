@@ -1,5 +1,9 @@
 # Top 20 apps on the App Store
 
+### Description: 
+
+This is an iOS exercise for practicing animations in Swift. Here's a [tutorial I wrote.](https://medium.com/written-code/ui-animations-with-swift-2ebb5e6d2292)
+
 ### Video Walkthrough:
 ![apps](https://cloud.githubusercontent.com/assets/3449724/22941308/6471f8a4-f2bb-11e6-8137-b63fd6b912b8.gif)
 
